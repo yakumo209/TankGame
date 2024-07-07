@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scripts/\u5FC5\u5907\u77E5\u8BC6\u70B9/Lesson1\u573A\u666F\u5207\u6362\u548C\u9000\u51FA/Test1.unity"
+    guid: 584df983afb7a17429e4ee08ac3acf0d
+  - enabled: 1
+    path: "Assets/Scripts/\u5FC5\u5907\u77E5\u8BC6\u70B9/Lesson1\u573A\u666F\u5207\u6362\u548C\u9000\u51FA/Test2.unity"
+    guid: 1cb7715d18508bc46bb7b1cb95a98ea6
   m_configObjects: {}
