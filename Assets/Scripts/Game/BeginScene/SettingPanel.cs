@@ -34,6 +34,7 @@ public class SettingPanel : BasePanel<SettingPanel>
             HideMe();
             if(SceneManager.GetActiveScene().name=="BeginScene")
                 BeginPanel.Instance.ShowMe();
+            Time.timeScale = 1;
         }; 
         HideMe();
     }

@@ -25,10 +25,13 @@ public class GamePanel : BasePanel<GamePanel>
         btnSetting.clickEvent += () =>
         {
             SettingPanel.Instance.ShowMe();
+
+            Time.timeScale = 0;
         };
         btnQuit.clickEvent += () =>
         {
-
+            QuitPanel.Instance.ShowMe();
+            Time.timeScale = 0;
         };
         // AddScore(100);
         // UpdateHP(100,20);
