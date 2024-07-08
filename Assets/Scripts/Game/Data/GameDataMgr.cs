@@ -30,6 +30,7 @@ public class GameDataMgr
     public void OpenOrCloseBgMusic(bool isOpen)
     {
         musciData.isOpenBg = isOpen;
+        BgMusic.Instance.ChangeOpen(isOpen);
         PlayerPrefsDataMgr.Instance.SaveData(musciData,"Music");
     }
     public void OpenOrCloseSound(bool isOpen)
@@ -41,6 +42,7 @@ public class GameDataMgr
     public void ChangeBgValue(float value)
     {
         musciData.bgValue = value;
+        BgMusic.Instance.ChangeValue(value);
         PlayerPrefsDataMgr.Instance.SaveData(musciData,"Music");
     }
     public void ChangeSoundValue(float value)
