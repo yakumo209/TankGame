@@ -16,17 +16,17 @@ public class SettingPanel : BasePanel<SettingPanel>
     {
         sliderMusic.changeValue += (value) =>
         {
-
+            GameDataMgr.Instance.ChangeBgValue(value);
         };sliderSound.changeValue += (value) =>
         {
-
+            GameDataMgr.Instance.ChangeSoundValue(value);
         };
         togMusic.changeValue += (value) =>
         {
-
+            GameDataMgr.Instance.OpenOrCloseBgMusic(value);
         };togSound.changeValue += (value) =>
         {
-
+            GameDataMgr.Instance.OpenOrCloseSound(value);
         };
         btnClose.clickEvent += () =>
         {
@@ -40,5 +40,20 @@ public class SettingPanel : BasePanel<SettingPanel>
     void Update()
     {
         
+    }
+
+    public void UpdatePanelInfo()
+    {
+        MusciData data = GameDataMgr.Instance.musciData;
+        sliderMusic.nowValue = data.bgValue;
+        sliderSound.nowValue = data.soundValue;
+        togMusic.isSel = data.isOpenBg;
+        togSound.isSel = data.isOpenSound;
+    }
+
+    public override void ShowMe()
+    {
+        base.ShowMe();
+        UpdatePanelInfo();
     }
 }
