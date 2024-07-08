@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scripts/\u5FC5\u5907\u77E5\u8BC6\u70B9/Lesson1\u573A\u666F\u5207\u6362\u548C\u9000\u51FA/Test1.unity"
-    guid: 584df983afb7a17429e4ee08ac3acf0d
+    path: Assets/Scenes/BeginScene.unity
+    guid: cd0246b3d8b357d4c8ef439f811401f5
   - enabled: 1
-    path: "Assets/Scripts/\u5FC5\u5907\u77E5\u8BC6\u70B9/Lesson1\u573A\u666F\u5207\u6362\u548C\u9000\u51FA/Test2.unity"
-    guid: 1cb7715d18508bc46bb7b1cb95a98ea6
+    path: Assets/Scenes/GameScene.unity
+    guid: 15c956badc8bb054d91036ea925447d7
   m_configObjects: {}
