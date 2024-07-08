@@ -27,7 +27,8 @@ public class BeginPanel : BasePanel<BeginPanel>
         };
         btnRank.clickEvent += () =>
         {
-
+            RankPanel.Instance.ShowMe();
+            HideMe();
         };
     }
 
