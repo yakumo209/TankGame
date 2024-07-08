@@ -24,7 +24,7 @@ public class GamePanel : BasePanel<GamePanel>
     {
         btnSetting.clickEvent += () =>
         {
-
+            SettingPanel.Instance.ShowMe();
         };
         btnQuit.clickEvent += () =>
         {

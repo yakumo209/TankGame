@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingPanel : BasePanel<SettingPanel>
 {
@@ -30,8 +31,9 @@ public class SettingPanel : BasePanel<SettingPanel>
         };
         btnClose.clickEvent += () =>
         {
-            HideMe(); 
-            BeginPanel.Instance.ShowMe();
+            HideMe();
+            if(SceneManager.GetActiveScene().name=="BeginScene")
+                BeginPanel.Instance.ShowMe();
         }; 
         HideMe();
     }
