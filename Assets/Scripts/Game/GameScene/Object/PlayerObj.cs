@@ -5,13 +5,7 @@ using UnityEngine;
 public class PlayerObj : TankBaseObj
 {
     public WeaponObj nowWeapon;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public Transform weaponPos;
     void Update()
     {
         transform.Translate(Vector3.forward*moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"));
@@ -41,5 +35,18 @@ public class PlayerObj : TankBaseObj
     {
         base.Wound(other);
         GamePanel.Instance.UpdateHP(this.maxHp,this.hp);
+    }
+
+    public void ChangeWeapon(GameObject obj)
+    {
+        if (nowWeapon != null)
+        {
+            Destroy(nowWeapon.gameObject);
+            nowWeapon = null;
+        }
+
+        GameObject weaponObj = Instantiate(obj,weaponPos,false );
+        nowWeapon = weaponObj.GetComponent<WeaponObj>();
+        nowWeapon.SetFather(this);
     }
 }
