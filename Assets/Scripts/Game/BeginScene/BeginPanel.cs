@@ -12,6 +12,7 @@ public class BeginPanel : BasePanel<BeginPanel>
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         btnBegin.clickEvent += () =>
         {
             SceneManager.LoadScene("GameScene");

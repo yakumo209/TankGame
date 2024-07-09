@@ -12,7 +12,7 @@ public class PlayerObj : TankBaseObj
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     void Update()
@@ -48,7 +48,9 @@ public class PlayerObj : TankBaseObj
 
     public override void Dead()
     {
-        base.Dead();
+        //base.Dead();
+        Time.timeScale = 0;
+        LosePanel.Instance.ShowMe();
     }
 
     public override void Wound(TankBaseObj other)
