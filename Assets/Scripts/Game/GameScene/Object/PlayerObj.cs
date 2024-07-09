@@ -6,8 +6,11 @@ public class PlayerObj : TankBaseObj
 {
     public WeaponObj nowWeapon;
     public Transform weaponPos;
+    public float fireRate = 0.3f;
+    private float nowTime;
     void Update()
     {
+        
         transform.Translate(Vector3.forward*moveSpeed*Time.deltaTime*Input.GetAxis("Vertical"));
         transform.Rotate(Vector3.up*roundSpeed*Time.deltaTime*Input.GetAxis("Horizontal"));
         tankHead.transform.Rotate(Vector3.up*headRoundSpeed*Time.deltaTime*Input.GetAxis("Mouse X"));
@@ -15,6 +18,16 @@ public class PlayerObj : TankBaseObj
         if (Input.GetMouseButtonDown(0))
         {
             Fire();   
+        }
+
+        nowTime += Time.deltaTime;
+        if (Input.GetMouseButton(0))
+        {
+            if (nowTime >= fireRate)
+            {
+                Fire();
+                nowTime = 0;
+            }
         }
     }
 

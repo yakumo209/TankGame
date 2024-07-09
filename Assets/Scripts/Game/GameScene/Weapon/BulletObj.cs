@@ -25,8 +25,16 @@ public class BulletObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cube"))
+        if (other.CompareTag("Cube")||
+            other.CompareTag("Player")&& fatherObj.CompareTag("Monster")||
+            other.CompareTag("Monster")&& fatherObj.CompareTag("Player"))
         {
+            TankBaseObj obj = other.GetComponent<TankBaseObj>();
+            if (obj != null)
+            {
+                obj.Wound(this.fatherObj);
+            }
+            
             if (effObj != null)
             {
                 GameObject eff = Instantiate(effObj, transform.position, transform.rotation);
